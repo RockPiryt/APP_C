@@ -45,7 +45,7 @@ int main()
     printf("triangle normal\n");
     for (i=1; i<=nw; i++)//pętla dla określenia ilości wierszy
     {   
-        for(j=1;j<=i; j++) //
+        for(j=1;j<=i; j++) // jak i=1 to j=1, jak i=2 to j=2
         {                  //
         printf("*");       //blok do stemplowania w poziomie 
         }                  //w drugim wierszu postawi 2 stemple bo zakres od 1 do 2
@@ -66,7 +66,7 @@ int main()
     printf("decreasing triangle normal\n");
     for (i=1; i<=nw; i++)//pętla dla określenia ilości wierszy
     {   
-        for(j=i;j<=nw; j++) //
+        for(j=i;j<=nw; j++) // uzależniam od i na początku aby zmniejszyć zakres stawiania gwiazdek
         {                  //
         printf("*");       //blok do stemplowania w poziomie 
         }                  //zakres się zmniejsza bo wartość początkowa i się zwiększa
@@ -131,6 +131,7 @@ int main()
     }
 /*-----------------------------------------------------------------------------------------*/
     //hill pattern \|
+    //w drugim rzędzie jest 3 gwiazdki!!! - 2x trójkąty odbite odjąć powtarzająca się kolumna
     /*
       *
      ***
@@ -194,7 +195,7 @@ int main()
         {                  //
         printf("*");       //blok do stemplowania w poziomie 
         }
-        
+
     printf("\n");
     }
 /*-----------------------------------------------------------------------------------------*/
