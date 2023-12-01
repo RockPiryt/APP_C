@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-// Program to change letter to integer
+// Program to change small letter to big letter
 int main()
 {   char c;
 
     while((c=getchar())!=EOF)
     {
-        printf("%d\n",c);
+        putchar(c + 'A'-'a');
     }
 
     return 0;
 }
 
-//data_char_in.txt as data
+//big_letter_data.txt

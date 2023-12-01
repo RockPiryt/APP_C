@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// Program to print char for endless
+// Program to change integer to letter
 int main()
 {   int d;
 
