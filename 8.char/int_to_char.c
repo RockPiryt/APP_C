@@ -2,14 +2,14 @@
 
 // Program to print char for endless
 int main()
-{   char c;
+{   int d;
 
-    while((c=getchar())!=EOF)
+    while(scanf("%d", &d)>0)
     {
-        printf("%d\n",c);
+        printf("%c\n",d);
     }
 
     return 0;
 }
 
-//data_char_in.txt as data
+//data_int_in.txt
