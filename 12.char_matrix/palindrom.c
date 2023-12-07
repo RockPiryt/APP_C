@@ -2,7 +2,6 @@
 
 Palindrom to słowo, które zapisane wspak jest takim samym słowem.
 
-Przykładem palindromu jest słowo: kajak.
 
 Znaki wczytujemy do tablicy statycznej typu char (zakładamy dla prostoty, że tablica ta jest 100-elementowa, następnie wczytujemy znaki, aż do napotkania końca znaku pliku (można to wywołać przy pomocy kombinacji klawiszy ctrl+d).
 
@@ -17,52 +16,49 @@ Jako rezultat program ma wypisać komunikat TAK, jeśli jest to palindrom lub NI
 
 
 int main()
-{   int i;//licznik do odwrócenia tablicy
-    int len;//długość stringa
-    int left,right; // indexy
-    char temp; //zmienna znakowa
-    char word[SIZE];//słowo wpisywane przez usera
-    char revert_word[] = "rumun";// przykładowe słowo do porównania
-    char reverse_word[SIZE];// słowo odwrócone
+{
+    char word[SIZE];
+    char reverse_word[SIZE];
+    int i;
+    int length;
+    int end;
+    char temp;
 
     //User enter word
     printf("Enter word \n");
-    scanf("%s", word); // bez & bo tablica
-    //fgets(word, SIZE-1,stdin);
-    //printf("Adres zmiennej %d", &word);
+    scanf("%s", &word); 
 
-    // // Długość łańcucha
-    len=strlen(word);
-    printf("%d\n", len);
+    //Reverse word
+    length = strlen(word);
+    end = length-1;
 
-    // left = 0; // set left index at 0  
-    // right = len; // set right index len - 1  
-    // // use for loop to store the reverse string  
-    // for (i = left; i <right; i++)  
-    // {   temp = word[i]; //odczyt pierwszego indexu z word, przypisany do temp żeby nie mieszać w orygnialnym słowie
-    //     printf("%c", temp);
-    //     word[i] = reverse_word[right];//Pierwszy index stajesię ostatnim indexem
-    //     reverse_word[right]  = temp;
-    //     right--; 
-    //     printf("%d ", reverse_word[i]);
-    // }  
+    for(i=0;i<end;i++)
+    {
+        temp=word[i];
+        word[i]=word[end];
+        word[end]=temp;
+        end--;
+    }
 
-
+    //Save reverserd word to new matrix reverse_word
+    for(i=0; i<=length; i++)
+    {
+        reverse_word[i] = word[i];
+    }
 
     // //Wyświetlenie słów
-    // printf("User word: %s \n", word);
-    // printf("Revert word: %s \n", reverse_word);
+    printf("User word: %s \n", word);
+    printf("Revert word: %s \n", reverse_word);
 
     // // Porównywanie łańcuchów
-    //if(!strcmp(word,revert_word))
-    // if(strcmp(word,revert_word) == 0)
-    // {
-    //     printf("The same words. User word: %s Revert_word: %s", word, revert_word);
-    // }
-    // else
-    // {
-    //     printf("Words are not the same");
-    // }
+    if(strcmp(word,reverse_word) == 0)
+    {
+        printf("The same words. User word: %s Revert_word: %s", word, reverse_word);
+    }
+    else
+    {
+        printf("Words are not the same");
+    }
 
     return 0;
 }

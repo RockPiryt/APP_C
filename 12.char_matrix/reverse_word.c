@@ -10,7 +10,6 @@ int main()
     char reverse_word[SIZE];
     int i;
     int length;
-    int middle;
     int end;
     char temp;
 
@@ -30,14 +29,13 @@ int main()
         end--;
     }
 
-    printf("%s\n", word);
-    // length=strlen(word);
-    // for(i=0; i<length; i++)
-    // {
-    //     reverse_word[i] = word[i];
-    // }
-    // printf("%s", reverse_word);
-    // printf("%s", reverse_word);
+    //Save reverserd word to new matrix
+    for(i=0; i<=length; i++)
+    {
+        reverse_word[i] = word[i];
+    }
+    printf("%s\n", reverse_word);
+
 
     return 0;
 }
