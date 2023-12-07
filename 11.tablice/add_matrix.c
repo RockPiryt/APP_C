@@ -26,7 +26,7 @@ int main()
     printf("Enter the rows and the columns (between 1 and  100) for 2nd matrix:\n");
     scanf("%d %d", &c, &d);
 
-    //Sprawdzenie a i b czy spełniają warunki
+    //Sprawdzenie a,b,c,d czy spełniają warunki
     if(a<0 || b<0 || a>100 || b>100 )
     {
         printf("error");
