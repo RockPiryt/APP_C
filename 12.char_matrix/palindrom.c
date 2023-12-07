@@ -10,6 +10,7 @@ int main()
 {
     char word[SIZE];
     char reversed_word[SIZE];
+    char original_word[SIZE];
     int i;
     int length;
     int end;
@@ -21,7 +22,7 @@ int main()
     printf("User word: %s \n", word);
 
     //Copy word to reversed word to not change the original word
-    strcpy(reversed_word,word);	//rev will be used to check palindrome
+    strcpy(original_word,word);	//rev will be used to check palindrome
 
     //Reverse word
     length = strlen(word);
@@ -34,19 +35,19 @@ int main()
         word[end]=temp;
         end--;
     }
-    printf("Original word after for loop: %s \n", reversed_word);
+    printf("Original word after for loop: %s \n", original_word);
 
-    // //Save reverserd word to new matrix reverse_word
-    // for(i=0; i<=length; i++)
-    // {
-    //     reversed_word[i] = word[i];
-    // }
+    //Save reverserd word to new matrix reverse_word
+    for(i=0; i<=length; i++)
+    {
+        reversed_word[i] = word[i];
+    }
 
     // //Print reversed word
-    printf("Reversed word: %s \n", word);
+    printf("Reversed word: %s \n", reversed_word);
 
     // Porównywanie łańcuchów - tu mi narazie porównuje przekształcony string z reversed_word więc zawsze będzie zgodnośc jak wczytać oryginał word?
-    if(strcmp(word,reversed_word) == 0)
+    if(strcmp(original_word,reversed_word) == 0)
     {
         printf("Palindrome = The same words.");
     }
