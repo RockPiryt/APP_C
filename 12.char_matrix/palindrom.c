@@ -1,13 +1,4 @@
-/*Napisz program w języku ANSI C, który sprawdzi czy dane słowo jest palindromem.
-
-Palindrom to słowo, które zapisane wspak jest takim samym słowem.
-
-
-Znaki wczytujemy do tablicy statycznej typu char (zakładamy dla prostoty, że tablica ta jest 100-elementowa, następnie wczytujemy znaki, aż do napotkania końca znaku pliku (można to wywołać przy pomocy kombinacji klawiszy ctrl+d).
-
-Zakładamy, że wszystkie znaki są z małej litery (nie rozpatrujemy przypadku, że występują duże litery).
-
-Jako rezultat program ma wypisać komunikat TAK, jeśli jest to palindrom lub NIE w przeciwnym przypadku.*/
+// Save reversed word to new matrix
 
 #include <stdio.h>
 #include <string.h>
@@ -18,7 +9,7 @@ Jako rezultat program ma wypisać komunikat TAK, jeśli jest to palindrom lub NI
 int main()
 {
     char word[SIZE];
-    char reverse_word[SIZE];
+    char reversed_word[SIZE];
     int i;
     int length;
     int end;
@@ -27,6 +18,10 @@ int main()
     //User enter word
     printf("Enter word \n");
     scanf("%s", &word); 
+    printf("User word: %s \n", word);
+
+    //Copy word to reversed word to not change the original word
+    strcpy(reversed_word,word);	//rev will be used to check palindrome
 
     //Reverse word
     length = strlen(word);
@@ -39,26 +34,27 @@ int main()
         word[end]=temp;
         end--;
     }
+    printf("Original word after for loop: %s \n", reversed_word);
 
-    //Save reverserd word to new matrix reverse_word
-    for(i=0; i<=length; i++)
+    // //Save reverserd word to new matrix reverse_word
+    // for(i=0; i<=length; i++)
+    // {
+    //     reversed_word[i] = word[i];
+    // }
+
+    // //Print reversed word
+    printf("Reversed word: %s \n", word);
+
+    // Porównywanie łańcuchów - tu mi narazie porównuje przekształcony string z reversed_word więc zawsze będzie zgodnośc jak wczytać oryginał word?
+    if(strcmp(word,reversed_word) == 0)
     {
-        reverse_word[i] = word[i];
-    }
-
-    // //Wyświetlenie słów
-    printf("User word: %s \n", word);
-    printf("Revert word: %s \n", reverse_word);
-
-    // // Porównywanie łańcuchów
-    if(strcmp(word,reverse_word) == 0)
-    {
-        printf("The same words. User word: %s Revert_word: %s", word, reverse_word);
+        printf("Palindrome = The same words.");
     }
     else
     {
         printf("Words are not the same");
     }
+
 
     return 0;
 }

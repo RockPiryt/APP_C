@@ -1,3 +1,4 @@
+//Print reverse word
 #include <stdio.h>
 #include <string.h>
 
@@ -7,7 +8,6 @@
 int main()
 {
     char word[SIZE];
-    char reverse_word[SIZE];
     int i;
 
     //User enter word
