@@ -22,16 +22,30 @@ Przykładowe wyjście
 
 int greatest_common_divisor(int a, int b)
 {
+	int r;
+	int NWD;
     /*Umieść swoje rozwiązanie w tym miejscu*/
+
+	
+	while(b > 0)
+	{
+		r = a % b; //jeżeli r!=0 to przypisuje nowe wartości dla a i b i wykonuje dalej dzielenia z resztą
+		a=b;// przypisanie nowej wartości zgodnie z algorytmem
+		b=r;// przypisanie nowej wartości zgodnie z algorytmem
+	}
+
+	NWD = a;
+
+	return NWD;
     /****************************************/
 }
 
-int main_test()
+int main()
 {
 	int a;
 	int b;
 
-	while (scanf("%d %d",&a,&b)>=2)
+	while (scanf("%d %d",&a,&b)>=2)//czemu est większe równe 2??
 	{
 		printf("%d\n",greatest_common_divisor(a,b));
 	}
