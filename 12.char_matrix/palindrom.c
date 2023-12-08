@@ -22,7 +22,7 @@ int main()
     printf("User word: %s \n", word);
 
     //Copy word to reversed word to not change the original word
-    strcpy(original_word,word);	//rev will be used to check palindrome
+    strcpy(original_word,word);	
 
     //Reverse word
     length = strlen(word);
