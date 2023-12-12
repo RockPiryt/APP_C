@@ -8,7 +8,11 @@ int dec_bin();
 
 int main()
 
-{   int n, binary_num;
+{   int n;
+    int i,j;
+
+    //Tab initialization
+    int binaryNum[100];
 
     //User enter number
     printf("Enter a number: \n");
@@ -20,33 +24,40 @@ int main()
         return 0; //for stepik test
     }
 
-    //Tab initialization
-    int tab[100];
+    else if(n==0)
+    {
+        binaryNum[0] = 0;
+        printf("%d", binaryNum[n]);
+    }
+    else
+    {
 
-    binary_num=dec_bin(n);
-    printf("%d", binary_num);
+        // Add value to array
+        i=0;
+        while(n>0)
+        {   // storing remainder in binary array 
+            binaryNum[i] = n % 2;
+            n /= 2;
+            i++;
+            //printf("%d\n",i);
+        }
+        // printing binary array in reverse order 
+        for (j = i - 1; j >= 0; j--) 
+            printf("%d", binaryNum[j]); 
+    }
+    
+
+
+    // n=i;
+    // printf("\nBinary Value:\n");
+    // for(i=0;i<n;i++)
+    // {
+    //     printf("%d",binaryNum[n-i-1]);
+    // }
+
 
     return 0; 
 }
 
 
 
-int dec_bin(int dec)
-{
-    int bin, bit, mul;
-
-    while(dec>0)
-    {   bin=0;
-        mul=1;
-        while(dec>0)
-        {   
-
-            bit=dec%2;// reszta z dzielenia przez 2
-            bin+=bit*mul;// na któym miejscu ma wylądować bit
-            mul*=10;// zwiększanie mul aby stawiać bit na kolejnym miejscu
-            dec/=2;//dzielenie bez reszty
-        }
-        //printf("%d\n", bin);
-    }
-    return bin;
-}
