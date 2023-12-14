@@ -6,6 +6,7 @@ W przypadku niepoprawnych danych program ma wyświetlić komunikat: BŁĄD i wyj
 
 Na końcu wypisanej tablicy ma się znaleźć znak nowej linii, a nie spacja.!*/
 
+
 #include <stdio.h>
 
 
@@ -13,43 +14,46 @@ void print_tab(int tab[], int tab_size)
 {
     int i;
 
-    for(i=1;i<=tab_size;++i)
+    for(i=0;i<tab_size;++i)
     {
-    tab[i] = i;
-    printf("%d", tab[i]);
-    if(i <=tab_size-1)
-            printf(" ");
+      printf("%d ", tab[i]);
     }
-    printf("\n");
 }
 
 int main()
 {   // Określenie zmiennych
     int n;
 
-
     //Pobranie od usera liczby n (jako wielkość tablicy)
     printf("Podaj liczbe naturalna <=100: \n");
     scanf("%d", &n);
 
     //Sprawdzzenie żeby u było naturalne i nie wykraczało poza zakres 100
-    if(n<0)
+    if(n<=0)
     {
         printf("BŁĄD");
-        return 1;
+        return 0;
     }
-    else if(n>100)
+    else if(n>=100)
     {
         printf("BŁĄD");
-        return 1;
+        return 0;
     }
+
 
 
     //Inicjalizacja tablicy
     int tab[100];
 
-    //wywołanie funkcji wypełniającej tablice
-    print_tab(tab,n);
+    //wypełnienie tablicy danymi od usera
+    for (int i=0; i<n; i++) {
+      scanf("%d", &tab[i]);
+    }
+
+    //wywołanie funkcji printującej tablice do przedostatniego elementu
+    print_tab(tab,n-1);
+    //dla ostatniej pętli enter
+    printf("%d\n", tab[n-1]);
 
     return 0;
 }
