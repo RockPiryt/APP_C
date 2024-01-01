@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int *stworz_tablice();
+int *set_array();
 
 int main () 
 {   
 
     //Call function
-    int *result = stworz_tablice();
+    int *result = set_array();
 
 
     //Release space memory
@@ -17,7 +17,7 @@ int main ()
 
 }
 
-int *stworz_tablice()
+int *set_array()
 {
     //User enter size of array
     int n=0;
