@@ -1,12 +1,24 @@
 #include <stdio.h>
-#include <stdlib.h>//malloc
+#include <stdlib.h>
 
+int *stworz_tablice();
 
 int main () 
 {   
-    //Initialize pointer to array
-    int *p_array;
 
+    //Call function
+    int *result = stworz_tablice();
+
+
+    //Release space memory
+    free(result);
+
+    return 0;
+
+}
+
+int *stworz_tablice()
+{
     //User enter size of array
     int n=0;
     
@@ -21,13 +33,12 @@ int main ()
     }
 
     //Allocate space memory for array
-    p_array = (int*)malloc(n * sizeof(int));
+    int *array = (int*)malloc(n * sizeof(int));
 
-    //Print adrress to array
-    printf("array address: %p\n", p_array);
+
 
     //Check if array has allocated memory
-    if (p_array == NULL)
+    if (array == NULL)
     {
       printf("BŁĄD");
       return 0;
@@ -36,18 +47,14 @@ int main ()
     //Fill an array with values
     for (int i=0; i<n; i++)
     {
-        p_array[i]=i+1;//index[0]=1
+        array[i]=i+1;//index[0]=1
     }
 
     //Print array
     for (int i=0; i<n; i++)
     {
-        printf("%d ", p_array[i]);
+        printf("%d ", array[i]);
     }
 
-    //Release space memory
-    free(p_array);
-
-    return 0;
-
+    return array;
 }
