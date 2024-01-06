@@ -46,7 +46,7 @@ int main()
         //Division
         case 3:
         printf("You choose Division\n");
-        calc= num_1/num_2;
+        calc= (float) num_1/num_2;
         printf("Division: %d/%d = %.2f", num_1, num_2, calc);
         break;
 
