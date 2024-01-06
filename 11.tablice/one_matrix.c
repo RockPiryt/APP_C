@@ -7,7 +7,7 @@ int *create_array(int n);
 void print_array(int *array, int tab_size);
 
 int find_max(int *array, int tab_size);
-void average();
+double calc_average(int *array, int tab_size);
 void odd_even();
 
 int main()
@@ -15,6 +15,7 @@ int main()
 {   int *user_array;
     int n;
     int value_max;
+    double average;
 
     //User enter value
     printf("Enter value: \n");
@@ -31,7 +32,11 @@ int main()
 
     //Find max value in array
     value_max = find_max(user_array,n); 
-    printf("High value is: %d", value_max);
+    printf("High value is: %d\n", value_max);
+
+    //Calc average of array values
+    average = calc_average(user_array,n); 
+    printf("Average is: %.2lf\n", average);
 
     free(user_array);
 
@@ -81,10 +86,19 @@ int find_max(int *array, int tab_size)
     return max;
 }
 
-void average()
-{
-    int a_num=5;
-    printf("Average is: %d", a_num);
+double calc_average(int *array, int tab_size)
+{   
+    double sum=0;
+    double average=0;
+
+    for(int i=0; i<tab_size; i++)
+    { // add values
+        sum+=array[i];
+    }
+
+    average = sum/tab_size;
+
+    return average;
 }
 void odd_even()
 {   int odd=1;
