@@ -13,6 +13,7 @@ int main()
     char word[100];
 
     //User enter word
+    printf("Enter word:");
     scanf("%s", &word); 
 
     //Check word length
@@ -20,7 +21,8 @@ int main()
     printf("Word length: %d\n", n);
 
     //Call function
-    czy_palindrom(word, n);
+    int result = czy_palindrom(word, n);
+    printf("%d", result);
 
     return 0;
 }
@@ -34,16 +36,18 @@ int czy_palindrom(char *word, int n)
     
     //Copy word to reversed word to not change the original word
     strcpy(original_word,word);	
+    printf("Original word: %s\n", original_word);
 
     //Reverse word
     int end = n-1;
-    for(int i=0;i<n-1;i++)
+    for(int i=0; i<end; i++)
     {
         char temp = word[i];
         word[i] = word[end];
         word[end] = temp;
         end--;
     }
+
 
     //Save reversed word to new matrix reverse_word
     for(int i=0; i<=n; i++)
@@ -56,12 +60,12 @@ int czy_palindrom(char *word, int n)
     // Porównywanie łańcuchów orginalnego i odwróconego
     if(strcmp(original_word,reversed_word) == 0)
     {
-        printf("TAK");
+        printf("TAK\n");
         return 0;
     }
     else
     {
-        printf("NIE");
+        printf("NIE\n");
         return 1;
     }
 
