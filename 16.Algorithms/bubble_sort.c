@@ -1,3 +1,6 @@
+// To sort unsorted array ascending/descending
+
+
 #include <stdio.h>
 
 void bubble_asce(int tab[], int length);

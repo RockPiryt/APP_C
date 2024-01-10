@@ -74,6 +74,5 @@ int calc_sum(int *array, int tab_size)
     { // add values
         sum += array[i];
     }
-
     return sum;
 }
