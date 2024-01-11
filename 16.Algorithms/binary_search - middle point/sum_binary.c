@@ -12,6 +12,7 @@ int *bubble_asce(int *array, int n); // Sort unsorted array ascending, return ar
 int calc_sum(int *array, int n);// Sum values in array
 int binary_search_sum(int array[], int l, int r); // Sum values in array with binary search
 int binary_search(int array[], int x, int l, int r);//Find num in array
+
 int main()
 {   int *unsorted_array;
     int *sorted_array;
