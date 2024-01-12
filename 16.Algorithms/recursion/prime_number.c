@@ -28,7 +28,7 @@ int main()
 bool isPrime(int n)
 {
     int stopper = n/2;
-    int divider_num = 2;// 2 because prime number are divided (with 0 reminder) by 1 and itself
+    int divider_num = 2;// start from 2 because prime number are divided (with 0 reminder) by 1 and itself
 
     if (n <= 1) return false; 
     else if  (n == 2) return true; 
@@ -36,7 +36,8 @@ bool isPrime(int n)
 }
 
 bool primeChecker2(int n, int stop,int divider)
-{
+{   
+    //base cases - end recursion:
     if  (n % divider == 0) return false; // if divider will 1 it wrong answer, because prime number are divided (with 0 reminder) by 1
     else if  (divider>=n/2) return true; 
     else return primeChecker2(n, stop,divider+1); 
