@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-void print_student(Student student);
 
 // struct Student
 //     {   
@@ -27,12 +26,19 @@ typedef struct
     int y;
 } Point;
 
+void print_student(Student student);
 
 int main()
 {   
     //Create struct instance
     // struct Student student_a;
     Student osoba;
+
+    Point p1 = {5,7};//wg kolejnosci przypisanie atrybutów
+    Point p2 = {.x=2, .y=4};
+
+    printf("p1.x = %d, p1.y=%d\n", p1.x, p1.y);
+    printf("p2.x = %d, p2.y=%d\n", p2.x, p2.y);
 
     //Add values to attributes
     osoba.wiek = 22;
