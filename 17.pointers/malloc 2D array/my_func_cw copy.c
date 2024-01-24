@@ -5,31 +5,31 @@ W przypadku sytuacji błędnych program ma wypisać komunikat BŁĄD i ma zakoń
 #include <stdlib.h>
 
 
-int **my_create_matrix (int n, int m);
+int **my_create_matrix (int rows, int cols);
 
 
 int main(void)
 {   
-    int n;
-    int m;
+    int rows;
+    int cols;
     //User enter size of array
     printf("Please enter rows value:\n");
-    scanf("%d", &n);
+    scanf("%d", &rows);
     printf("Please enter cols value:\n");
-    scanf("%d", &m);
+    scanf("%d", &cols);
     
     // to store my 2d array
     int **matrix;
 
-    matrix = my_create_matrix(n, m);
+    matrix = my_create_matrix(rows, cols);
 
 
     // //Print 2D array
     printf("Your array:\n");
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < rows; i++)
     {
         // Outputs the values at each row
-        for (int j = 0; j < m; j++)
+        for (int j = 0; j < cols; j++)
         {
             printf("%d ", matrix[i][j]);
         }
@@ -37,7 +37,7 @@ int main(void)
     }
 
     //Free memory of rows
-    for(int i = 0; i < n; i++)
+    for(int i = 0; i < rows; i++)
     {
         free(matrix[i]); 
     }
@@ -47,13 +47,13 @@ int main(void)
     return 0;
 }
 
-int **my_create_matrix (int n, int m)
+int **my_create_matrix (int rows, int cols)
 {   
     //Main pointer
     int **matrix; 
 
     //Allocate memory for rows number
-    matrix = malloc(sizeof(int *) * n);
+    matrix = malloc(sizeof(int *) * rows);
     if (matrix == NULL)
     {
         printf("BŁĄD");
@@ -61,10 +61,10 @@ int **my_create_matrix (int n, int m)
 
 
     // Loop through rows 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < rows; i++)
     {
         //Allocate memory for cols in each rows
-        matrix[i] = malloc(sizeof(int) * m);
+        matrix[i] = malloc(sizeof(int) * cols);
         if (matrix == NULL)
         {
             printf("BŁĄD");
@@ -74,9 +74,9 @@ int **my_create_matrix (int n, int m)
     //Fill 2D array
     int count = 1;
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < rows; i++)
     {
-        for (int j = 0; j < m; j++)
+        for (int j = 0; j < cols; j++)
         {   
             matrix[i][j] = count++;
         }
