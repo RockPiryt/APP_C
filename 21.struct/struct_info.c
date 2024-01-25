@@ -33,7 +33,25 @@ void print_points(Point *points_array);
 //void print_points(Point points_array[10]);
 
 int main()
-{   //Create array of structs
+{   
+    // // User enter values for Point 1 and Point 2
+    // double xa, ya, xb, yb;
+    // printf("Please enter x value for Point a: \n");
+    // scanf("%lf", &xa);
+    // printf("Please enter y value for Point a: \n");
+    // scanf("%lf", &ya);
+    // printf("Please enter x value for Point b: \n");
+    // scanf("%lf", &xb);
+    // printf("Please enter y value for Point b: \n");
+    // scanf("%lf", &yb);
+
+    // //Diffrent scanf
+    // Point p3;
+    // printf("Please enter x and y values for Point 3: \n");
+    // scanf("%lf %lf", &p3.x, &p3.y);
+    //////////////////////////////////////////////
+
+    //Create array of structs
     Point points_array[10];
 
     //Add values for each struct in array
