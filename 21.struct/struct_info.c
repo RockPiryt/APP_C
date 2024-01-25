@@ -28,18 +28,43 @@ typedef struct
 
 void print_student(Student student);
 
-int main()
-{   
-    //Create struct instance
-    // struct Student student_a;
-    Student osoba;
+void print_points(Point *points_array);
+//void print_points(Point points_array[]);
+//void print_points(Point points_array[10]);
 
+int main()
+{   //Create array of structs
+    Point points_array[10];
+
+    //Add values for each struct in array
+    for(int i=0; i<10; i++)
+    {
+        points_array[i].x = i;
+        points_array[i].y = 10-i;
+    }
+    //Call function to print all structs in array
+    print_points(points_array);
+
+    ////////////////////////////////////////////////////
+    //Create single points with values in initialization
     Point p1 = {5,7};//wg kolejnosci przypisanie atrybutów
-    Point p2 = {.x=2, .y=4};
+    Point p2 = 
+    {
+        .x=2, 
+        .y=4
+    };
 
     printf("p1.x = %d, p1.y=%d\n", p1.x, p1.y);
     printf("p2.x = %d, p2.y=%d\n", p2.x, p2.y);
 
+    //Assigment - change values
+    p1=p2;
+    printf("Afert assigment: p1.x = %d, p1.y=%d\n", p1.x, p1.y);
+
+    //////////////////////////////////////////////////
+    //Create struct instance
+    // struct Student student_a;
+    Student osoba;
     //Add values to attributes
     osoba.wiek = 22;
     strcpy(osoba.name, "Paulina");
@@ -65,6 +90,14 @@ int main()
     //     }
 
     return 0;
+}
+
+void print_points(Point *points_array)
+{
+    for(int i=0; i<10; i++)
+    {
+        printf("p%d = (%d,%d)\n", i, points_array[i].x, points_array[i].y);
+    }
 }
 void print_student(Student student)
 {
