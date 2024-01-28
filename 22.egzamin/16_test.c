@@ -1,0 +1,1 @@
+// gcc -o projekt prog.c
