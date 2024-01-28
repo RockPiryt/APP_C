@@ -1,26 +1,19 @@
 #include <stdio.h>
 
-//9 
+//Zadanie 9 co na wyjściu?
 
-//odpowiedź 8
-int A(int n);
+//odpowiedź AAAA
+
 
 int main()
 {   
-    int result;
-    result= A(5);
-    printf("%d", result);
+    int n=2;
+    int k;
+    k = (n%2)?n++:4;
+    while (k--)
+        printf("A");
     return 0;
 }
 
-//9 
-int A(int n)
-{
-    if(n<=1)
-        return 1;
-    else
-        return n + A(n/3+1);
-}            // 5+ A(2)
-            //  5 + 3  = 8
-            //  A(2) = 2+2/3+1=
-            //        2+0+1=3
+//1 n=2%2 false k=4 A k=3 A k=2 A k=1 A = 4xA
+//2 n=2%2 false k=0
