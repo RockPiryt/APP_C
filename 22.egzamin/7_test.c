@@ -19,12 +19,12 @@ int main()
     printf("Book title after changing: %s\n", new_book.title);
 
     //Make pointer to new_book struct
-    struct Book *ptr_book;
+    struct Book *ptr_book;//WAŻNE
     ptr_book = &new_book;
 
     //Change price
     printf("Initial book price: %f\n", new_book.price);
-    ptr_book->price = new_book.price/2;
+    ptr_book->price = new_book.price/2;//WAŻNE
     printf("Book a new price: %f\n", new_book.price);
 
 

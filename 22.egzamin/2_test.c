@@ -6,7 +6,7 @@ int main()
 
     
     pA - pB; //yes
-    pA * pB; //no
+    //pA * pB; //no
     pA > pB; //yes
-    pA + pB; //no
+   //pA + pB; //no
 }

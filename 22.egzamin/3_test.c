@@ -1,6 +1,6 @@
 #include <stdio.h>
 // wyprintowało 6
-// i=6 i wieksze od 5
+// i=6 i wieksze od 5 ////////WAŻNE
 int main()
 {   
     int i=0;

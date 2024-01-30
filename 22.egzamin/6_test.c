@@ -1,12 +1,12 @@
 #include <stdio.h>
 
-//opowiedź 22
+//opowiedź 22//WAŻNE
 int main()
 {   
     int i;
     int tab[] = {0,2,4,6,8,10,12,14,16,18,20};
 
-    for(i=2; i<20; i++)
+    for(i=2; i<20; i++)// DOKAŃCZA WARUNEK
     {
         i += *(tab+i);
         printf("act: %d\n", i);

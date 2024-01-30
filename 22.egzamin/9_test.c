@@ -9,7 +9,7 @@ int main()
 {   
     int n=2;
     int k;
-    k = (n%2)?n++:4;
+    k = (n%2)?n++:4;//False -> k=4
     while (k--)
         printf("A");
     return 0;

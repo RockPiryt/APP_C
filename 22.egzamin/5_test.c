@@ -6,7 +6,7 @@ int main()
     int a=0;
     int b=1;
 
-    if(b-- && ++a && a*b)// po sprawdzeniu if b=0, a=1, a*b=0
+    if(b-- && ++a && a*b)// po sprawdzeniu if b=0, a=1, a*b=0////WAŻNE
         printf("Tak %d %d", a++, --b);
     else
         printf("Nie %d %d", ++a, b--);// a=2, b=0, a zwiększam b nie ruszam
