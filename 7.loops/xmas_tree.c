@@ -16,7 +16,9 @@ int main()
 
     //zmienne dla korony drzewa
     int nw;//nw pewna ilość wierszy
-    nw=8;
+    printf("Podaj szerokosc korony drzewa:\n");
+    scanf("%d", &nw);
+    //nw=8;
 
 
 
@@ -24,8 +26,12 @@ int main()
     // //v pewna ilość wierszy
     // //c pewna ilość kolumn
     int v,c;
-    v=4;
-    c=2;
+    printf("Podaj wysokosc pnia:\n");
+    scanf("%d", &v);
+    printf("Podaj szerokosc pnia:\n");
+    scanf("%d", &c);
+    //v=4;
+    //c=2;
 /*-------------------------------------------------------------------------------------------*/
 //Pierwszy trójkąt od góry zaczyna się od 1 gwiazdki i konczy na "nw"->tójkąt z przesunięciem 
 /*
@@ -105,11 +111,16 @@ int main()
     printf("\n");
     }
 /*-------------------------------------------------------------------------------------------*/
+
+//żeby pień był na srodku korony drzewa
+    int middle;
+    middle=(nw-c);
+
 // Pień drzewa ->rectangle
     for (i=1; i<=v; i++)//pętla dla określenia ilości wierszy
     {   
         //przed printowaniem gwiazdek printowanie spacji
-        for (l=1; l<=6; l++)
+        for (l=1; l<=middle; l++)
         {
             printf(" ");
         }
