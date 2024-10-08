@@ -30,13 +30,13 @@ int main()
     if(a<0 || b<0 || a>100 || b>100 )
     {
         printf("error");
-        return 1;
+        return 0;// 0 dla stepika, normalnie 1
     }
 
     if(c<0 || d<0 || c>100 || d>100 )
     {
         printf("error");
-        return 1;
+        return 0; // 0 dla stepika, normalnie 1
     }
 
     
@@ -52,9 +52,9 @@ int main()
     }
 
     printf("Enter numbers for 2nd matrix:\n");
-    for(i=0;i<a;i++)
+    for(i=0;i<c;i++)
     {
-        for(j=0;j<b;j++)
+        for(j=0;j<d;j++)
         {
             scanf("%d",&tab2[i][j]);
         }
